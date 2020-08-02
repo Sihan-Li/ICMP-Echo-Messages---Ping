@@ -1,0 +1,7 @@
+In this ICMP echo message, you can send to a given IP a request and test if you will get correct reply, input the command :
+sudo python3 ./ping.py “hostName” number_of_pings request_period timeout
+Then you’ll see a group of feedback telling you how much correct replies you received and the percentage of total requests.
+The logica of this program is that firstly we have a Ping class, inside this class we defined send_request and receive_apply these two main functions and other helper functions, finally there is a handelSingleTask to combine all these tasks.
+As we have number_of_pings(int from os.argv), then we can call that number of threads and each thread will handle a single task.
+if a correct reply is received then a task is finished, or the reply is checked invalid or is not received within given timeout, then we will also end the task.
+After all the tasks are done, we give a final report about the situation of all these requests.
